@@ -15,3 +15,8 @@
     src: '{{minikube_install_target}}'
     dest: '{{minikube_install_dir}}/minikube'
     state: link
+
+- name: install k8 startup script
+  become: yes
+  become_user: root
+  copy: src=k8.sh dest=/usr/local/bin/k8.sh mode=0755
